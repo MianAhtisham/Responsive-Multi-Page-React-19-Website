@@ -3,6 +3,8 @@ import { getCountryData } from "../api/postApi";
 import { Loader } from "../components/UI/Loader"
 import { CountryCard } from "../components/Layout/Countrycard";
 import { SearchFilter } from "../components/UI/SearchFilter";
+
+
 export const Country = () => {
     const [isPending, startTransition] = useTransition();
     const [countries, setCountries] = useState([]);
@@ -50,7 +52,7 @@ export const Country = () => {
         setCountries={setCountries}
       />
     <ul className="grid grid-four-cols">{
-        countries.map((curcountry, index) => {
+        filterCountries.map((curcountry, index) => {
             return <CountryCard country={curcountry} key={index} />
         })
         }</ul>
